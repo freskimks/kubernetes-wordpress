@@ -1,0 +1,3 @@
+kubectl create secret generic mysql-sc --from-literal=rootpassword=toto --from-literal=user=toto --from-literal=password=toto --from-literal=db=wordpress -n wordpress
+
+docker exec -it minikube bash -c "mkdir /mysql /wordpress"
