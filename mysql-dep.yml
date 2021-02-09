@@ -20,8 +20,8 @@ spec:
         ports:
         - containerPort: 3306
         volumeMounts:
-          - mountPath: /etc/mysql/conf.d
-            name: mysql-config
+          - mountPath: /var/lib/mysql
+            name: mysql-data
 
         env:
         - name: MYSQL_ROOT_PASSWORD
@@ -47,6 +47,6 @@ spec:
               key: db
        
       volumes:
-        - name: mysql-config
+        - name: mysql-data
           persistentVolumeClaim:
             claimName: pvc-mysql
